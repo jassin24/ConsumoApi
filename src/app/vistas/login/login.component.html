@@ -1,0 +1,17 @@
+<app-header></app-header>
+<div class="contenido">
+    <form [formGroup]="loginForm" (ngSubmit)="Login(loginForm.value)">
+        <div class="mb-3">
+          <label for="usuario" class="form-label">Usuario</label>
+          <input type="text" class="form-control" id="usuario" formControlName="usuario">
+        </div>
+        <div class="mb-3">
+          <label for="pass" class="form-label">Constraseña</label>
+          <input type="password" class="form-control" id="pass" formControlName="contrasena">
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="errorStatus">
+            <p>{{errormje}}</p>
+        </div>
+        <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+      </form>
+</div>
